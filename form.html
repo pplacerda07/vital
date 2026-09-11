@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GHK-Cu · Monte seu tratamento | VitaPep Pharma</title>
+<meta name="description" content="Monte seu tratamento com GHK-Cu em 6 perguntas rápidas e fale com a VitaPep Pharma no WhatsApp.">
+<meta name="theme-color" content="#F7F5F1">
+<link rel="icon" href="assets/mark-v.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   VitaPep Pharma / captura GHK-Cu
+   ============================================================ */
+:root{
+  --paper:#F7F5F1;
+  --paper-2:#F1EEE8;
+  --white:#FFFFFF;
+  --ink:#1A1A1E;
+  --ink-2:#413F3A;
+  --muted:#7C776F;
+  --muted-2:#A8A39A;
+  --line:#E4E0D8;
+  --line-2:#D3CEC4;
+  --gold:#B0801F;
+  --gold-2:#D7A63F;
+  --gold-soft:#FBF4E4;
+  --wa:#128C4A;
+  --ease:cubic-bezier(.22,.85,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Poppins','Inter',sans-serif;font-weight:500;letter-spacing:-.02em;line-height:1.15;margin:0}
+p{margin:0}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+input{font:inherit}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold-2);color:#1A1A1E}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 28px}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+/* o caramelo cobre a tela inteira até a pessoa começar */
+.hero{
+  position:relative;overflow:hidden;border-radius:0 0 30px 30px;
+  background:linear-gradient(112deg,#F0E9DA 0%,#E8DCC2 46%,#DFCFAB 100%);
+  min-height:100dvh;
+}
+/* some de vez ao começar: colapsar por max-height dependia da transição rodar */
+body.started .hero{display:none}
+.heromain{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:20px}
+.herolegal{font-size:10.5px;letter-spacing:.06em;color:var(--muted);opacity:.75;line-height:1.5}
+body:not(.started) .board{display:none}
+.hero .art{
+  position:absolute;top:0;right:0;bottom:0;width:44%;
+  background:url('assets/ghk-vial.webp') center 34%/cover no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 42%);
+          mask-image:linear-gradient(90deg,transparent,#000 42%);
+  opacity:.95;
+}
+@media(max-width:820px){.hero .art{width:56%;opacity:.4}}
+.hero .inner{position:relative;display:flex;flex-direction:column;min-height:100dvh;padding-top:34px;padding-bottom:40px}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:46px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:26px;height:auto}
+.brand .wm{font-family:'Poppins';font-weight:600;font-size:17px;letter-spacing:-.02em;line-height:1;display:block}
+.brand .wm i{color:var(--gold);font-style:normal}
+.brand .sub{display:block;font-size:8px;letter-spacing:.42em;color:var(--muted);font-weight:600;margin-top:3px;font-family:'Poppins'}
+.hero-top .tel{font-size:13.5px;color:var(--ink-2);font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.hero-top .tel svg{width:15px;height:15px;fill:var(--wa)}
+@media(max-width:600px){.hero-top .tel span{display:none}}
+
+.hero h1{font-size:clamp(38px,7.4vw,66px);font-weight:500;max-width:9ch}
+.hero h1 b{font-weight:600;color:var(--gold);display:block}
+.hero .tagline{margin-top:20px;font-size:17px;color:var(--ink-2);max-width:36ch}
+.hero .acts{display:flex;flex-wrap:wrap;gap:11px;margin-top:32px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:18px;margin-top:34px;font-size:12.5px;color:var(--ink-2)}
+.hero .facts span{display:inline-flex;align-items:center;gap:7px;font-weight:500}
+.hero .facts i{width:5px;height:5px;border-radius:50%;background:var(--gold);flex:none}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 26px;border-radius:100px;font-weight:600;font-size:15px;
+  border:1px solid transparent;white-space:nowrap;
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s,opacity .2s,border-color .2s;
+}
+.btn:active{transform:scale(.975)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.btn-dark{background:var(--ink);color:#FBFAF8;box-shadow:0 12px 26px -14px rgba(26,26,30,.9)}
+.btn-dark:hover{transform:translateY(-1px);box-shadow:0 16px 32px -14px rgba(26,26,30,1)}
+.btn-dark[disabled]{opacity:.3;pointer-events:none;box-shadow:none}
+.btn-outline{border-color:var(--line-2);color:var(--ink-2);background:rgba(255,255,255,.5)}
+.btn-outline:hover{background:var(--white);border-color:var(--gold)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 14px 30px -14px rgba(18,140,74,.9)}
+.btn-wa:hover{transform:translateY(-1px)}
+.btn-wa svg{fill:currentColor;stroke:none;width:19px;height:19px}
+
+/* ============================================================
+   TOPBAR (durante o formulário)
+   ============================================================ */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:40;
+  background:rgba(247,245,241,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  transform:translateY(-100%);transition:transform .5s var(--ease);
+}
+body.started .topbar{transform:none}
+.topbar .prog{height:2px;background:var(--line)}
+.topbar .prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-2));transition:width .6s var(--ease)}
+.topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+.counter{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);font-weight:600;font-variant-numeric:tabular-nums}
+.counter b{color:var(--gold);font-weight:700}
+
+/* ============================================================
+   BOARD
+   ============================================================ */
+.board{padding:66px 0 40px;min-height:auto}
+body.started .board{min-height:100dvh;padding-top:96px;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:640px){body.started .board{padding-top:96px}}
+
+.screen{display:none}
+/* fill-mode backwards (e não both): um transform residual no fim da animação
+   criaria containing block e quebraria o position:fixed do CTA no celular */
+.screen.on{display:block;animation:rise .55s var(--ease) backwards}
+.screen.on.rev{animation-name:riseRev}
+/* a tela de resultado só faz fade, porque ela carrega o CTA fixo do WhatsApp */
+#scr-done.on{animation:fadeIn .5s var(--ease) backwards}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes riseRev{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.screen.leaving{animation:sink .28s var(--ease) both}
+@keyframes sink{to{opacity:0;transform:translateY(-14px)}}
+
+/* cabeçalho da pergunta: título à esquerda, nota à direita */
+.qhead{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:start;margin-bottom:34px}
+@media(max-width:820px){.qhead{grid-template-columns:1fr;gap:16px;margin-bottom:26px}}
+.qhead h2{font-size:clamp(26px,4.1vw,40px);font-weight:400;color:var(--ink);max-width:16ch}
+.qhead h2 b{font-weight:600}
+.qaside{text-align:right}
+@media(max-width:820px){.qaside{text-align:left}}
+.tagpill{
+  display:inline-block;padding:5px 14px;border-radius:100px;background:var(--gold-soft);
+  border:1px solid #F0E3C4;color:var(--gold);font-size:12px;font-weight:600;
+  letter-spacing:.04em;margin-bottom:12px
+}
+.qaside p{color:var(--gold);font-size:14.5px;line-height:1.55;opacity:.92;max-width:34ch;margin-left:auto}
+@media(max-width:820px){.qaside p{margin-left:0}}
+
+/* opções em pílula */
+/* pílulas com largura natural, assim nenhum rótulo quebra em duas linhas */
+.opts{display:flex;flex-wrap:wrap;gap:11px}
+.opt{
+  display:flex;align-items:center;gap:11px;max-width:100%;
+  padding:12px 17px;border-radius:100px;background:var(--white);
+  border:1px solid var(--line);
+  transition:border-color .2s var(--ease),background .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);
+  animation:optIn .45s var(--ease) both;
+}
+@keyframes optIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.opt:hover{border-color:var(--gold-2);transform:translateY(-1px);box-shadow:0 8px 18px -14px rgba(40,32,12,.6)}
+.opt:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.opt .radio{
+  width:18px;height:18px;flex:none;border-radius:50%;border:1.5px solid var(--line-2);
+  display:grid;place-items:center;transition:.2s var(--ease);background:var(--white)
+}
+.opt .radio::after{
+  content:"";width:8px;height:8px;border-radius:50%;background:var(--white);
+  transform:scale(0);transition:transform .25s cubic-bezier(.3,1.7,.5,1)
+}
+.opt .lb{
+  flex:1;min-width:0;font-size:14.6px;font-weight:500;line-height:1.35;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.opt .lb small{color:var(--muted);font-weight:400}
+.opt[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-soft)}
+.opt[aria-pressed="true"] .radio{border-color:var(--gold);background:var(--gold)}
+.opt[aria-pressed="true"] .radio::after{transform:scale(1)}
+.opt.flash{animation:flash .4s var(--ease)}
+@keyframes flash{40%{transform:scale(.98)}100%{transform:none}}
+
+/* navegação */
+.navrow{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  margin-top:38px;padding-top:22px;border-top:1px solid var(--line)
+}
+.ghost{font-size:14px;color:var(--muted);display:inline-flex;align-items:center;gap:7px;padding:9px 2px;transition:color .2s}
+.ghost:hover{color:var(--ink)}
+.ghost svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ghost[hidden],.btn[hidden]{display:none}
+/* display:flex venceria o atributo hidden, entao a barra precisa desta regra */
+.navrow[hidden]{display:none!important}
+.navrow .right{display:flex;align-items:center;gap:16px}
+.selcount{font-size:12.5px;color:var(--muted-2);font-variant-numeric:tabular-nums}
+.selcount[hidden]{display:none}
+.kbdhint{font-size:12px;color:var(--muted-2)}
+@media(max-width:820px){.kbdhint{display:none}}
+kbd{
+  font-family:'Poppins';font-size:10.5px;font-weight:600;background:var(--white);
+  border:1px solid var(--line-2);border-bottom-width:2px;border-radius:5px;padding:2px 6px;color:var(--muted)
+}
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+.loading{text-align:center;padding:70px 0}
+.loading .dots{display:flex;gap:7px;justify-content:center;margin-bottom:24px}
+.loading .dots i{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:bob 1s infinite var(--ease)}
+.loading .dots i:nth-child(2){animation-delay:.14s}
+.loading .dots i:nth-child(3){animation-delay:.28s}
+@keyframes bob{0%,60%,100%{opacity:.28;transform:translateY(0)}30%{opacity:1;transform:translateY(-7px)}}
+.loading h2{font-size:23px;font-weight:500}
+.loading .st{color:var(--muted);font-size:14.5px;margin-top:9px;min-height:22px}
+
+/* ============================================================
+   RESULTADO
+   ============================================================ */
+.done{max-width:820px}
+.done .seal{
+  width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
+  background:var(--gold);margin-bottom:20px;animation:pop .5s cubic-bezier(.3,1.6,.5,1) both
+}
+@keyframes pop{from{transform:scale(0)}to{transform:none}}
+.done .seal svg{width:23px;height:23px;stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.done h2{font-size:clamp(26px,4.2vw,38px);font-weight:500}
+.done h2 b{font-weight:600;color:var(--gold)}
+.done .lead{color:var(--muted);margin-top:12px;font-size:16px;max-width:52ch}
+
+.rescols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;align-items:start}
+@media(max-width:820px){.rescols{grid-template-columns:1fr}}
+
+.recap{background:var(--white);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.recap .head{display:flex;align-items:center;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--gold-soft),var(--white))}
+.recap .head img{width:46px;height:46px;border-radius:12px;object-fit:cover;border:1px solid var(--line)}
+.recap .head b{display:block;font-family:'Poppins';font-size:16px;font-weight:600;letter-spacing:-.01em}
+.recap .head span{font-size:13px;color:var(--gold);font-weight:600}
+.recap dl{margin:0;padding:4px 18px 12px}
+.recap .it{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);animation:rise .5s var(--ease) both}
+.recap .it:last-child{border-bottom:0}
+.recap dt{width:104px;flex:none;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);font-weight:600;padding-top:3px}
+.recap dd{margin:0;font-size:14.6px;line-height:1.5}
+@media(max-width:520px){.recap .it{flex-direction:column;gap:3px}.recap dt{width:auto}}
+
+.namebox label{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);font-weight:600;margin-bottom:9px}
+.namebox input{
+  width:100%;padding:15px 18px;border-radius:100px;background:var(--white);
+  border:1px solid var(--line);color:var(--ink);transition:border-color .2s,box-shadow .2s
+}
+.namebox input::placeholder{color:var(--muted-2)}
+.namebox input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,128,31,.13)}
+
+.msgcard{margin-top:18px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--white)}
+.msgcard .mh{display:flex;align-items:center;gap:9px;padding:11px 16px;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);font-weight:600}
+.msgcard .mh svg{width:14px;height:14px;fill:var(--wa)}
+.msgcard .body{padding:15px;background:var(--paper-2)}
+.bubble{
+  background:#DCF8C6;border-radius:12px 12px 12px 4px;padding:12px 14px;
+  font-size:13.6px;line-height:1.6;white-space:pre-wrap;word-break:break-word;color:#12351E;
+  box-shadow:0 2px 6px -3px rgba(0,0,0,.25)
+}
+.done .cta{margin-top:16px;display:grid;gap:10px}
+.done .cta .btn-wa{padding:18px 28px;font-size:16.5px}
+.done .note{font-size:12.5px;color:var(--muted-2);text-align:center}
+
+/* ============================================================
+   MODAL "como funciona"
+   ============================================================ */
+.sheet{
+  position:fixed;inset:0;z-index:60;display:none;place-items:center;padding:24px;
+  background:rgba(26,26,30,.42);backdrop-filter:blur(3px)
+}
+.sheet.on{display:grid;animation:fade .3s var(--ease) both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sheet .box{
+  background:var(--white);border-radius:24px;max-width:520px;width:100%;padding:30px;
+  border:1px solid var(--line);box-shadow:0 40px 90px -40px rgba(20,16,8,.6);
+  animation:rise .45s var(--ease) both;max-height:86vh;overflow:auto
+}
+.sheet h3{font-size:22px;font-weight:600;margin-bottom:6px}
+.sheet .box > p{color:var(--muted);font-size:14.5px}
+.sheet ol{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:16px;counter-reset:s}
+.sheet li{display:flex;gap:13px;font-size:14.6px;line-height:1.55;color:var(--ink-2)}
+.sheet li::before{
+  counter-increment:s;content:counter(s);flex:none;width:24px;height:24px;border-radius:50%;
+  background:var(--gold-soft);border:1px solid #F0E3C4;color:var(--gold);
+  font-size:11.5px;font-weight:700;display:grid;place-items:center;font-family:'Poppins';margin-top:1px
+}
+.sheet .close{margin-top:24px;width:100%}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+
+/* ============================================================
+   MOBILE: o tráfego vem do Instagram, então esta é a tela real
+   ============================================================ */
+.vialm{display:none}
+
+@media(max-width:760px){
+  /* ---- toque ---- */
+  button,a,.opt{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  .opt:hover{transform:none;box-shadow:none;border-color:var(--line)}
+  .btn:hover,.btn-outline:hover,.btn-dark:hover,.btn-wa:hover{transform:none}
+
+  /* ---- hero ---- */
+  .hero{border-radius:0 0 24px 24px}
+  .hero .art{display:none}
+  .hero .inner{padding-top:20px;padding-bottom:36px}
+  .hero-top{margin-bottom:26px}
+  .vialm{
+    display:block;width:96px;border-radius:14px;overflow:hidden;margin-bottom:22px;
+    border:1px solid rgba(255,255,255,.5);box-shadow:0 16px 34px -20px rgba(60,45,15,.65)
+  }
+  .vialm img{width:100%;display:block}
+  .hero h1{font-size:40px;max-width:none}
+  .hero .tagline{font-size:15.5px;margin-top:14px;max-width:none}
+  .hero .acts{margin-top:24px;gap:9px}
+  .hero .acts .btn{flex:1 1 100%;padding:16px 24px}
+  .hero .facts{margin-top:26px;gap:10px 16px;font-size:12px}
+
+  /* ---- pergunta ---- */
+  body.started .board{padding-top:78px;padding-bottom:96px;min-height:100dvh}
+  .topbar .row{padding-top:9px;padding-bottom:9px}
+  .qhead{margin-bottom:22px;gap:12px}
+  .qhead h2{font-size:26px;max-width:none}
+  .tagpill{margin-bottom:8px;padding:4px 12px;font-size:11.5px}
+  .qaside p{font-size:13.5px;max-width:none}
+
+  .opts{gap:9px}
+  .opt{padding:12px 15px;gap:9px;min-height:46px}
+  .opt .lb{font-size:14.2px}
+  .opt .lb small{font-size:13px}
+
+  /* ---- navegação fixa no rodapé ---- */
+  .navrow{
+    position:fixed;left:0;right:0;bottom:0;z-index:45;margin:0;
+    padding:11px 20px calc(11px + env(safe-area-inset-bottom));
+    background:rgba(247,245,241,.95);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border-top:1px solid var(--line);
+  }
+  .navrow .right{gap:12px;flex:1;justify-content:flex-end}
+  .ghost{min-height:44px;padding:10px 8px;margin-left:-8px}
+  .navrow #nextBtn{padding:15px 26px}
+  .selcount{font-size:12px}
+
+  /* ---- resultado ---- */
+  .done h2{font-size:27px}
+  .done .lead{font-size:15px}
+  .rescols{margin-top:24px;gap:16px}
+  /* o botão do WhatsApp fica sempre na tela, não abaixo da dobra */
+  #scr-done{padding-bottom:126px}
+  .done .cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:35;margin:0;gap:4px;
+    padding:11px 20px calc(9px + env(safe-area-inset-bottom));
+    background:rgba(247,245,241,.96);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border-top:1px solid var(--line)
+  }
+  .done .cta .btn-wa{padding:17px 24px;font-size:16px}
+  .done .note{font-size:11px;line-height:1.45;margin-top:0}
+  .done .note .deskonly{display:none}
+
+  /* ---- modal vira bottom sheet ---- */
+  .sheet{align-items:end;padding:0}
+  .sheet .box{
+    border-radius:26px 26px 0 0;padding:26px 22px calc(26px + env(safe-area-inset-bottom));
+    max-height:88vh;animation-name:sheetUp
+  }
+  @keyframes sheetUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+  .sheet h3{font-size:20px}
+}
+
+/* telas baixas (iPhone SE, androids antigos): o hero precisa caber sem rolar */
+@media(max-height:730px) and (max-width:760px){
+  .hero .inner{padding-top:16px;padding-bottom:26px}
+  .hero-top{margin-bottom:16px}
+  .vialm{width:70px;margin-bottom:14px;border-radius:11px}
+  .hero h1{font-size:33px}
+  .hero .tagline{font-size:14.5px;margin-top:11px}
+  .hero .acts{margin-top:18px;gap:8px}
+  .hero .acts .btn{padding:14px 22px;font-size:14.5px}
+  .hero .facts{margin-top:18px;gap:7px 14px;font-size:11.5px}
+  .herolegal{font-size:9.5px}
+}
+
+@media(max-width:380px){
+  .hero h1{font-size:35px}
+  .qhead h2{font-size:23.5px}
+  .opt{padding:11px 14px}
+  .opt .lb{font-size:13.8px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="hero">
+  <div class="art" aria-hidden="true"></div>
+  <div class="wrap inner">
+    <div class="hero-top">
+      <span class="brand">
+        <img src="assets/mark-v.png" alt="">
+        <span>
+          <span class="wm">Vita<i>Pep</i></span>
+          <span class="sub">PHARMA</span>
+        </span>
+      </span>
+      <a class="tel" id="telLink" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2"/></svg>
+        <span>(67) 3198-0887</span>
+      </a>
+    </div>
+
+    <div class="heromain">
+      <div class="vialm"><img src="assets/ghk-vial.webp" alt="Frasco de GHK-Cu 100mg" width="96"></div>
+
+      <h1>GHK-Cu <b>100mg</b></h1>
+      <p class="tagline">Colágeno, firmeza e regeneração da pele. Monte o seu tratamento e fale com quem importa direto da fábrica.</p>
+
+      <div class="acts">
+        <button class="btn btn-dark" id="startBtn" type="button">
+          Montar meu tratamento
+          <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </button>
+        <button class="btn btn-outline" id="howBtn" type="button">Entenda como funciona</button>
+      </div>
+
+      <div class="facts">
+        <span><i></i>99%+ de pureza</span>
+        <span><i></i>3 mL · aplicação subcutânea</span>
+        <span><i></i>Pronta entrega em Campo Grande</span>
+      </div>
+    </div>
+
+    <p class="herolegal">Research use only · Conteúdo informativo, não substitui orientação profissional de saúde.</p>
+  </div>
+</header>
+
+<!-- ===================== TOPBAR ===================== -->
+<div class="topbar" id="topbar">
+  <div class="prog"><i id="bar"></i></div>
+  <div class="wrap row">
+    <span class="brand">
+      <img src="assets/mark-v.png" alt="">
+      <span>
+        <span class="wm">Vita<i>Pep</i></span>
+        <span class="sub">PHARMA</span>
+      </span>
+    </span>
+    <span class="counter" id="counter"></span>
+  </div>
+</div>
+
+<!-- ===================== BOARD ===================== -->
+<main class="board">
+  <div class="wrap">
+
+    <div id="questions"></div>
+
+    <!-- loading -->
+    <div class="screen" id="scr-load">
+      <div class="loading">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <h2>Montando seu tratamento</h2>
+        <p class="st" id="loadStatus">Lendo suas respostas</p>
+      </div>
+    </div>
+
+    <!-- resultado -->
+    <div class="screen" id="scr-done">
+      <div class="done">
+        <div class="seal"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h2>Tudo pronto. É só <b>enviar</b>.</h2>
+        <p class="lead">Sua mensagem já está escrita com tudo que você escolheu. Toque no botão e a conversa abre com nossa equipe.</p>
+
+        <div class="rescols">
+          <div class="recap">
+            <div class="head">
+              <img src="assets/ghk-vial.webp" alt="">
+              <span>
+                <b>GHK-Cu 100mg</b>
+                <span id="kitQty">1 frasco para começar</span>
+              </span>
+            </div>
+            <dl id="recapList"></dl>
+          </div>
+
+          <div>
+            <div class="namebox">
+              <label for="nameInput">Como podemos te chamar? (opcional)</label>
+              <input id="nameInput" type="text" placeholder="Seu primeiro nome" autocomplete="given-name" maxlength="40">
+            </div>
+
+            <div class="msgcard">
+              <div class="mh">
+                <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2"/></svg>
+                Sua mensagem
+              </div>
+              <div class="body"><div class="bubble" id="bubble"></div></div>
+            </div>
+
+            <div class="cta">
+              <a class="btn btn-wa" id="waBtn" href="#" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2"/></svg>
+                Enviar no WhatsApp
+              </a>
+              <p class="note"><span class="deskonly">Abre a conversa com a nossa equipe. </span>Nada é enviado antes de você apertar enviar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- navegação -->
+    <div class="navrow" id="navrow" hidden>
+      <button class="ghost" id="backBtn" type="button">
+        <svg viewBox="0 0 24 24"><path d="M19 12H6M11 18l-6-6 6-6"/></svg> Voltar
+      </button>
+      <div class="right">
+        <span class="kbdhint" id="kbdhint"></span>
+        <span class="selcount" id="selCount" hidden></span>
+        <button class="ghost" id="skipBtn" type="button" hidden>Pular</button>
+        <button class="btn btn-dark" id="nextBtn" type="button">Continuar</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- ===================== MODAL ===================== -->
+<div class="sheet" id="sheet">
+  <div class="box" role="dialog" aria-modal="true" aria-label="Como funciona">
+    <h3>Como funciona</h3>
+    <p>Do formulário até o frasco na sua mão, em quatro passos.</p>
+    <ol>
+      <li>Você responde seis perguntas rápidas sobre o que quer alcançar com o GHK-Cu.</li>
+      <li>A gente monta o resumo do seu tratamento e escreve a mensagem por você.</li>
+      <li>Você abre o WhatsApp com tudo pronto e só aperta enviar, sem cadastro e sem formulário longo.</li>
+      <li>Nossa equipe confirma disponibilidade, valor e prazo. Pronta entrega em Campo Grande e envio para todo o Brasil.</li>
+      <li>A aplicação do GHK-Cu é subcutânea. É o único formato com que trabalhamos, e a orientação faz parte do atendimento.</li>
+    </ol>
+    <button class="btn btn-dark close" id="sheetClose" type="button">Entendi</button>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var WA_NUMBER = "556731980887";                                  // +55 67 3198-0887
+var OPENING   = "Oie vim pelo forms, e quero usar o ghk cu para";
+
+/* ============================================================
+   perguntas
+   ============================================================ */
+var STEPS = [
+{
+  id:'objetivo', kind:'single', required:true,
+  q:'O que você quer <b>alcançar</b> com o GHK-Cu?',
+  tag:'Objetivo',
+  note:'Escolha o que mais pesa pra você hoje. O resto a gente ajusta no atendimento.',
+  recap:'Objetivo',
+  options:[
+    {id:'antiidade', label:'Rejuvenescimento facial',      msg:'rejuvenescimento facial e anti-idade'},
+    {id:'firmeza',   label:'Firmeza e colágeno',           msg:'firmeza e estímulo de colágeno'},
+    {id:'marcas',    label:'Cicatrizes e marcas',          msg:'melhorar cicatrizes, manchas e marcas'},
+    {id:'cabelo',    label:'Cabelo e couro cabeludo',      msg:'cuidar do cabelo e do couro cabeludo'},
+    {id:'posproc',   label:'Pós-procedimento',             msg:'me recuperar melhor depois de procedimentos estéticos'},
+    {id:'longevo',   label:'Regeneração e longevidade',    msg:'regeneração geral e longevidade'}
+  ]
+},
+{
+  id:'areas', kind:'multi',
+  q:'Onde você quer o <b>resultado</b>?',
+  tag:'Áreas',
+  note:'Selecione as áreas que você quer trabalhar. Pode marcar quantas quiser.',
+  recap:'Foco',
+  options:[
+    {id:'rosto', label:'Rosto',           msg:'rosto'},
+    {id:'colo',  label:'Pescoço e colo',  msg:'pescoço e colo'},
+    {id:'olhos', label:'Área dos olhos',  msg:'área dos olhos'},
+    {id:'couro', label:'Couro cabeludo',  msg:'couro cabeludo'},
+    {id:'maos',  label:'Mãos',            msg:'mãos'},
+    {id:'corpo', label:'Corpo',           msg:'corpo'}
+  ]
+},
+{
+  id:'queixas', kind:'multi',
+  q:'O que mais te <b>incomoda</b> hoje?',
+  tag:'Queixas',
+  note:'Marque tudo que faz sentido pra você. Isso ajuda a gente a te orientar direito.',
+  recap:'Incomoda',
+  options:[
+    {id:'rugas',    label:'Linhas finas e rugas',        msg:'linhas finas e rugas'},
+    {id:'flacidez', label:'Flacidez',                    msg:'flacidez'},
+    {id:'textura',  label:'Textura e poros',             msg:'textura irregular e poros'},
+    {id:'manchas',  label:'Manchas e melasma',           msg:'manchas e melasma'},
+    {id:'acne',     label:'Cicatrizes de acne',          msg:'cicatrizes de acne'},
+    {id:'opaca',    label:'Pele opaca',                  msg:'pele opaca'},
+    {id:'queda',    label:'Queda de cabelo',             msg:'queda de cabelo'},
+    {id:'sensivel', label:'Vermelhidão',                 msg:'vermelhidão e sensibilidade'}
+  ]
+},
+{
+  id:'ritmo', kind:'single', wide:true,
+  q:'Como você quer <b>começar</b>?',
+  tag:'Quantidade',
+  note:'É isso que define o tamanho do kit que vai no seu orçamento.',
+  recap:'Quantidade',
+  options:[
+    {id:'testar',   label:'Quero testar',        note:'1 frasco',        msg:'começar testando com 1 frasco',                              qty:'1 frasco para começar'},
+    {id:'completo', label:'Protocolo completo',  note:'2 a 3 frascos',   msg:'fazer um protocolo completo, com 2 a 3 frascos',             qty:'2 a 3 frascos · protocolo completo'},
+    {id:'repor',    label:'Já uso, quero repor', note:'kit maior',       msg:'repor meu estoque com um kit maior',                         qty:'Kit maior · uso contínuo'},
+    {id:'pro',      label:'Sou profissional',    note:'lista completa',  msg:'atender meus clientes / revender, e quero a lista completa', qty:'Lista completa para profissional'}
+  ]
+},
+{
+  id:'experiencia', kind:'single', wide:true,
+  q:'Você já usou <b>peptídeo</b> antes?',
+  tag:'Experiência',
+  note:'A aplicação do GHK-Cu é subcutânea. É o único formato com que trabalhamos.',
+  recap:'Experiência',
+  options:[
+    {id:'jausei',  label:'Já usei',   note:'conheço a aplicação',    msg:'já usei peptídeo antes e conheço a aplicação subcutânea'},
+    {id:'nunca',   label:'Nunca usei', note:'quero orientação',      msg:'nunca usei peptídeo e quero orientação sobre a aplicação subcutânea'}
+  ]
+},
+{
+  id:'prazo', kind:'single', wide:true,
+  q:'Pra <b>quando</b> você quer?',
+  tag:'Prazo',
+  note:'Temos pronta entrega em Campo Grande e enviamos para todo o Brasil.',
+  recap:'Quando',
+  options:[
+    {id:'agora',    label:'Agora, com pronta entrega', note:'já sai hoje',       msg:'começar agora, com pronta entrega'},
+    {id:'semana',   label:'Esta semana',              note:'quero me organizar', msg:'começar ainda esta semana'},
+    {id:'mes',      label:'Este mês',                 note:'sem pressa',         msg:'começar ainda este mês'},
+    {id:'pesquisa', label:'Só pesquisando',           note:'preço e prazo',      msg:'saber preço e disponibilidade primeiro'}
+  ]
+}
+];
+
+/* ============================================================
+   estado
+   ============================================================ */
+var answers = {};
+var idx = -1;                    // -1 = ainda não começou · 0..n-1 = perguntas · n = final
+var $  = function(s,c){ return (c||document).querySelector(s); };
+var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+
+var bar = $('#bar'), counter = $('#counter'), navrow = $('#navrow');
+var backBtn = $('#backBtn'), nextBtn = $('#nextBtn'), skipBtn = $('#skipBtn');
+var selCount = $('#selCount'), kbdhint = $('#kbdhint');
+var ARROW = '<svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>';
+
+function pad(n){ return (n<10?'0':'')+n; }
+function step(){ return STEPS[idx]; }
+function sel(id){ return answers[id] || []; }
+function stepById(id){ return STEPS.filter(function(s){ return s.id === id; })[0]; }
+
+/* ---------- render ---------- */
+(function build(){
+  var html = '';
+  STEPS.forEach(function(st){
+    html += '<div class="screen" id="scr-'+st.id+'">';
+    html +=   '<div class="qhead">';
+    html +=     '<h2>'+st.q+'</h2>';
+    html +=     '<div class="qaside"><span class="tagpill">'+st.tag+'</span><p>'+st.note+'</p></div>';
+    html +=   '</div>';
+    html +=   '<div class="opts'+(st.wide?' wide':'')+'">';
+    st.options.forEach(function(o,j){
+      html += '<button type="button" class="opt" data-step="'+st.id+'" data-opt="'+o.id+'"'+
+              ' aria-pressed="false" style="animation-delay:'+(40+j*34)+'ms">';
+      html +=   '<span class="radio"></span>';
+      html +=   '<span class="lb">'+o.label+(o.note?' <small>· '+o.note+'</small>':'')+'</span>';
+      html += '</button>';
+    });
+    html +=   '</div>';
+    html += '</div>';
+  });
+  $('#questions').innerHTML = html;
+})();
+
+/* ---------- navegação ---------- */
+function goTo(i, back){
+  var from = $('.screen.on');
+  var toId = i >= STEPS.length ? 'scr-load' : 'scr-'+STEPS[i].id;
+  var to = document.getElementById(toId);
+  if(!to) return;
+
+  if(from && from !== to){
+    from.classList.add('leaving');
+    setTimeout(function(){ from.classList.remove('on','leaving','rev'); }, 250);
+  }
+  setTimeout(function(){
+    $$('.screen').forEach(function(s){ s.classList.remove('on','rev','leaving'); });
+    to.classList.add('on');
+    if(back) to.classList.add('rev');
+    $$('.opt', to).forEach(function(el){ el.style.animation='none'; void el.offsetWidth; el.style.animation=''; });
+    /* no celular a pergunta anterior pode ter deixado a página rolada */
+    if(window.scrollY > 0) window.scrollTo(0,0);
+  }, (from && from !== to) ? 180 : 0);
+
+  idx = i;
+  chrome();
+}
+
+function chrome(){
+  var total = STEPS.length;
+
+  if(idx >= total){                 // loading / resultado
+    bar.style.width = '100%';
+    counter.textContent = '';
+    navrow.hidden = true;
+    return;
+  }
+
+  var st = step();
+  bar.style.width = (idx/total*100)+'%';
+  counter.innerHTML = 'Passo <b>'+pad(idx+1)+'</b> / '+pad(total);
+  navrow.hidden = false;
+  backBtn.hidden = false;
+
+  if(st.kind === 'multi'){
+    var n = sel(st.id).length;
+    selCount.hidden = n === 0;
+    selCount.textContent = n + (n === 1 ? ' escolhido' : ' escolhidos');
+    skipBtn.hidden = n > 0 || !!st.required;
+    nextBtn.disabled = false;
+    kbdhint.innerHTML = 'Selecione e aperte <kbd>Enter &crarr;</kbd>';
+  } else {
+    selCount.hidden = true;
+    skipBtn.hidden = !!st.required;
+    nextBtn.disabled = !!st.required && !sel(st.id).length;
+    kbdhint.innerHTML = 'Use <kbd>1</kbd>…<kbd>'+st.options.length+'</kbd> para escolher';
+  }
+  nextBtn.innerHTML = (idx === total-1 ? 'Enviar minha mensagem ' : 'Continuar ') + ARROW;
+}
+
+function start(){
+  if(document.body.classList.contains('started')) return;
+  document.body.classList.add('started');
+  window.scrollTo(0,0);
+  goTo(0);
+}
+
+function next(){
+  var st = step();
+  if(st.required && !sel(st.id).length){ shake(); return; }
+  if(idx < STEPS.length-1) goTo(idx+1);
+  else finish();
+}
+function back(){
+  if(idx > 0){ goTo(idx-1, true); return; }
+  /* volta pro hero */
+  document.body.classList.remove('started');
+  $$('.screen').forEach(function(s){ s.classList.remove('on','rev','leaving'); });
+  idx = -1;
+  navrow.hidden = true;
+  window.scrollTo(0,0);
+}
+function shake(){
+  var box = $('.screen.on .opts');
+  if(box && box.animate) box.animate(
+    [{transform:'translateX(0)'},{transform:'translateX(-7px)'},{transform:'translateX(7px)'},{transform:'translateX(0)'}],
+    {duration:320}
+  );
+}
+
+$('#startBtn').addEventListener('click', start);
+nextBtn.addEventListener('click', function(){ next(); });
+backBtn.addEventListener('click', back);
+skipBtn.addEventListener('click', function(){ answers[step().id] = []; marks(); next(); });
+
+/* ---------- seleção ---------- */
+document.addEventListener('click', function(e){
+  var b = e.target.closest ? e.target.closest('.opt') : null;
+  if(!b) return;
+  var st = stepById(b.dataset.step);
+  var id = b.dataset.opt;
+
+  b.classList.remove('flash'); void b.offsetWidth; b.classList.add('flash');
+
+  if(st.kind === 'single'){
+    answers[st.id] = [id];
+    marks();
+    setTimeout(next, 300);
+  } else {
+    var cur = sel(st.id).slice();
+    var opt = st.options.filter(function(o){ return o.id === id; })[0];
+    if(opt.exclusive){
+      cur = cur.indexOf(id) > -1 ? [] : [id];
+    } else {
+      var exIds = st.options.filter(function(o){ return o.exclusive; }).map(function(o){ return o.id; });
+      cur = cur.filter(function(x){ return exIds.indexOf(x) === -1; });
+      var k = cur.indexOf(id);
+      if(k > -1) cur.splice(k,1); else cur.push(id);
+    }
+    answers[st.id] = cur;
+    marks(); chrome();
+  }
+});
+
+function marks(){
+  $$('.opt').forEach(function(b){
+    b.setAttribute('aria-pressed', sel(b.dataset.step).indexOf(b.dataset.opt) > -1 ? 'true' : 'false');
+  });
+}
+
+/* ---------- teclado ---------- */
+document.addEventListener('keydown', function(e){
+  if(e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+  if($('#sheet').classList.contains('on')){
+    if(e.key === 'Escape') closeSheet();
+    return;
+  }
+  if(idx === -1){
+    if(e.key === 'Enter'){ e.preventDefault(); start(); }
+    return;
+  }
+  if(idx >= STEPS.length) return;
+
+  if(e.key === 'Enter'){ e.preventDefault(); next(); return; }
+  if(e.key === 'Backspace'){ e.preventDefault(); back(); return; }
+
+  var n = parseInt(e.key,10);
+  if(n >= 1 && n <= 9){
+    var opts = $$('.screen.on .opt');
+    if(opts[n-1]){ e.preventDefault(); opts[n-1].click(); }
+  }
+});
+
+/* ---------- modal ---------- */
+function openSheet(){ $('#sheet').classList.add('on'); }
+function closeSheet(){ $('#sheet').classList.remove('on'); }
+$('#howBtn').addEventListener('click', openSheet);
+$('#sheetClose').addEventListener('click', closeSheet);
+$('#sheet').addEventListener('click', function(e){ if(e.target === this) closeSheet(); });
+
+/* ============================================================
+   final
+   ============================================================ */
+var LOAD_MSGS = ['Lendo suas respostas','Conferindo o estoque','Escrevendo sua mensagem'];
+
+function finish(){
+  goTo(STEPS.length);
+  var i = 0, st = $('#loadStatus');
+  st.textContent = LOAD_MSGS[0];
+  var t = setInterval(function(){ i++; if(i < LOAD_MSGS.length) st.textContent = LOAD_MSGS[i]; }, 430);
+  setTimeout(function(){
+    clearInterval(t);
+    renderResult();
+    $('#scr-load').classList.remove('on');
+    $('#scr-done').classList.add('on');
+    window.scrollTo(0,0);
+  }, 1500);
+}
+
+function chosen(stepId){
+  var st = stepById(stepId);
+  return sel(stepId).map(function(id){
+    return st.options.filter(function(o){ return o.id === id; })[0];
+  }).filter(Boolean);
+}
+function joinNice(a){
+  if(!a.length) return '';
+  if(a.length === 1) return a[0];
+  /* se algum item já tem um "e" no meio, unir só por vírgula evita frase ambígua */
+  var hasE = a.some(function(s){ return / e /.test(s); });
+  if(hasE) return a.join(', ');
+  return a.slice(0,-1).join(', ') + ' e ' + a[a.length-1];
+}
+
+function renderResult(){
+  var ritmo = chosen('ritmo')[0];
+  $('#kitQty').textContent = (ritmo && ritmo.qty) ? ritmo.qty : '1 frasco para começar';
+
+  var html = '', n = 0;
+  STEPS.forEach(function(st){
+    var opts = chosen(st.id);
+    if(!opts.length) return;
+    n++;
+    html += '<div class="it" style="animation-delay:'+(n*60)+'ms"><dt>'+st.recap+'</dt>'+
+            '<dd>'+joinNice(opts.map(function(o){ return o.label; }))+'</dd></div>';
+  });
+  if(n === 0){
+    html = '<div class="it"><dt>Resumo</dt><dd>Você pulou as perguntas, mas sem problema: a gente te orienta no WhatsApp.</dd></div>';
+  }
+  /* a aplicação é sempre subcutânea, então entra fixa no resumo */
+  html += '<div class="it" style="animation-delay:'+((n+1)*60)+'ms"><dt>Aplicação</dt>'+
+          '<dd>Subcutânea<br><span style="font-size:12.5px;color:var(--muted)">único formato que trabalhamos</span></dd></div>';
+  $('#recapList').innerHTML = html;
+
+  updateMsg();
+}
+
+function buildMsg(){
+  var name = ($('#nameInput').value || '').trim();
+  var L = [];
+
+  var obj = chosen('objetivo')[0];
+  L.push(OPENING + ' ' + (obj ? obj.msg : 'cuidar da minha pele') + '.');
+  L.push('');
+
+  var a = chosen('areas');
+  if(a.length) L.push('📍 Foco em: ' + joinNice(a.map(function(o){ return o.msg; })) + '.');
+
+  var q = chosen('queixas');
+  if(q.length) L.push('🔎 O que mais me incomoda: ' + joinNice(q.map(function(o){ return o.msg; })) + '.');
+
+  var r = chosen('ritmo')[0];
+  if(r) L.push('📦 Quero ' + r.msg + '.');
+
+  var e = chosen('experiencia')[0];
+  if(e) L.push('💉 Sobre a aplicação: ' + e.msg + '.');
+
+  var p = chosen('prazo')[0];
+  if(p) L.push('⏱️ Quero ' + p.msg + '.');
+
+  L.push('');
+  L.push(name ? ('Meu nome é ' + name + '. Consegue me ajudar?') : 'Consegue me ajudar?');
+
+  return L.join('\n').replace(/\n{3,}/g,'\n\n');
+}
+
+function updateMsg(){
+  var m = buildMsg();
+  $('#bubble').textContent = m;
+  $('#waBtn').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(m);
+}
+
+$('#nameInput').addEventListener('input', updateMsg);
+/* link direto do topo */
+$('#telLink').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(OPENING + '...');
+
+})();
+</script>
+</body>
+</html>
