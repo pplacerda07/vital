@@ -17,6 +17,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
+<!-- Meta Pixel · PEP HARD -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2090274458589717');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2090274458589717&ev=PageView&noscript=1" alt=""></noscript>
+<!-- fim do Meta Pixel -->
+
 <style>
 /* ============================================================
    VitaPep Pharma / página do GHK-Cu
@@ -388,9 +405,24 @@ var WA_NUMBER = "556731980887";                                        // +55 67
 var MSG       = "Oi! Vim pelo site e quero saber mais sobre o GHK-Cu 100mg.";
 
 var link = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(MSG);
-["#waBtn","#waBtn2","#telLink"].forEach(function(sel){
-  var el = document.querySelector(sel);
-  if(el) el.href = link;
+
+/* Contact é o evento padrão do Meta para contato com o negócio.
+   É esse que deve ser marcado como conversão no Gerenciador de Anúncios. */
+function marcarConversao(origem){
+  if(typeof fbq !== 'function') return;
+  fbq('track', 'Contact', {
+    content_name:'GHK-Cu 100mg',
+    content_category:'whatsapp',
+    origem:origem
+  });
+}
+
+[["#waBtn","botao-principal"],["#waBtn2","mais-informacoes"],["#telLink","topo"]]
+.forEach(function(par){
+  var el = document.querySelector(par[0]);
+  if(!el) return;
+  el.href = link;
+  el.addEventListener('click', function(){ marcarConversao(par[1]); });
 });
 
 var sheet = document.getElementById('sheet');

@@ -41,6 +41,16 @@ Pureza, quantidade, volume e demais especificações ficam no bloco `.specs`
 dentro do modal, em HTML direto. A pureza está como **99%+**, que é o declarado
 no rótulo da marca. Se houver laudo com o valor exato do lote, troque ali.
 
+## Meta Pixel
+
+Pixel **PEP HARD** () instalado nas duas páginas:
+
+-  dispara no carregamento.
+-  dispara em todo clique de WhatsApp, com o parâmetro   dizendo de onde veio (, , ).
+
+**Contact é o evento de conversão.** É ele que deve ser escolhido como
+resultado da campanha no Gerenciador de Anúncios.
+
 ## Notas
 
 - Mobile-first. Em telas de 393px ou mais a página cabe inteira sem rolar.
