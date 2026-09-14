@@ -966,11 +966,11 @@ $('#nameInput').addEventListener('input', updateMsg);
 /* link direto do topo */
 $('#telLink').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(OPENING + '...');
 
-/* Contact é o evento padrão do Meta para contato com o negócio.
+/* Lead é o evento padrão do Meta para captação de cliente.
    É esse que deve ser marcado como conversão no Gerenciador de Anúncios. */
 function marcarConversao(origem){
   if(typeof fbq !== 'function') return;
-  fbq('track', 'Contact', {content_name:'GHK-Cu 100mg', content_category:'whatsapp', origem:origem});
+  fbq('track', 'Lead', {content_name:'GHK-Cu 100mg', content_category:'whatsapp', origem:origem});
 }
 [['#waBtn','fim-do-formulario'],['#telLink','topo']].forEach(function(par){
   var el = $(par[0]);

@@ -46,10 +46,10 @@ no rótulo da marca. Se houver laudo com o valor exato do lote, troque ali.
 Pixel **PEP HARD** (`2090274458589717`) instalado nas duas páginas:
 
 - `PageView` dispara no carregamento, com fallback em `noscript`.
-- `Contact` dispara em todo clique de WhatsApp, com o parâmetro `origem`
+- `Lead` dispara em todo clique de WhatsApp, com o parâmetro `origem`
   dizendo de onde veio (`botao-principal`, `mais-informacoes`, `topo`).
 
-**Contact é o evento de conversão.** É ele que deve ser escolhido como
+**Lead é o evento de conversão.** É ele que deve ser escolhido como
 resultado da campanha no Gerenciador de Anúncios.
 
 Para trocar o pixel, o ID aparece em três pontos de cada arquivo: no `init`,

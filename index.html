@@ -406,11 +406,11 @@ var MSG       = "Oi! Vim pelo site e quero saber mais sobre o GHK-Cu 100mg.";
 
 var link = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(MSG);
 
-/* Contact é o evento padrão do Meta para contato com o negócio.
+/* Lead é o evento padrão do Meta para captação de cliente.
    É esse que deve ser marcado como conversão no Gerenciador de Anúncios. */
 function marcarConversao(origem){
   if(typeof fbq !== 'function') return;
-  fbq('track', 'Contact', {
+  fbq('track', 'Lead', {
     content_name:'GHK-Cu 100mg',
     content_category:'whatsapp',
     origem:origem
